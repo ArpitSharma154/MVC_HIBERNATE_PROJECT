@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>   
+   
+   <package name="myActions" extends="struts-default">
+
+        <action name = "openCreateAdminPage">
+            <result>CreateAdmin.jsp</result>      
+         </action>  
+
+         <action name = "createAdmin" class = "actions.CreateAdmin" method = "callCreateAdmin">
+            <result name = "success">AdminLogin.jsp</result> 
+            <result name = "failure">Failure.jsp</result>
+         </action>  
+
+
+         <action name = "checkAdmin" class = "actions.CheckAdmin" method = "callCheckAdmin">         
+            <result name = "success">AdminWelcomePage.jsp</result>
+            <result name = "failure">Error.jsp</result>
+         </action>
+      
+         <action name = "getPassword" class = "actions.MailAction">
+            <result >mail_success.jsp</result>
+         </action>
+
+         <action name="ViewContent" class="actions.ViewContentAction" method="callContentView">
+             <result name="success">ViewContent.jsp</result>
+         </action>
+
+         <action name="ViewContentHome" class="actions.Entry">
+            <result name="success">ViewContentHome.jsp</result>
+         </action>
+             
+         <action name = "viewAllUser" class = "actions.ViewAllUser" method = "callViewAllUser">
+            <result name = "success">ManageUser.jsp</result>  
+            <result name = "failure">Failure.jsp</result>  
+         </action>
+     
+         <action name = "viewProfile" class = "actions.ViewUserProfile" method = "callViewUserProfile">
+            <result name = "success">ViewUser.jsp</result>  
+            <result name = "failure">Failure.jsp</result>  
+         </action>
+
+         <action name = "deleteUser" class = "actions.DeleteUser" method = "callDeleteUser">
+            <result name = "success">AfterDeleteUser.jsp</result>  
+            <result name = "failure">Failure.jsp</result>  
+         </action>
+
+         <action name="searchCategoryWise" class="actions.CategorywiseAction" method="callCategorywiseContent">
+            <result name="success">viewpost.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+    
+         <action name="searchDateWise" class="actions.DatewiseAction" method="callDatewisewiseContent">
+            <result name="success">ViewDatewise.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+    
+         <action name="HomepageContent" class="actions.ViewContentAction" method="callContentView">
+            <result name="success">HomePage.jsp</result>
+             </action>
+        
+         <action name="ViewCategorywisehome" class="actions.CategorywiseAction" method="callCategorywiseContent">
+            <result name="success">ViewContentCat.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+      
+         <action name="viewReport" class="actions.ReportAction" method="callReport">
+            <result name="success">ViewReport.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+      
+         <action name="Viewreportpost" class="actions.ReportpostAction" method="callReportPost">
+            <result name="success">ViewReportedpost.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+   
+         <action name="DeleteReportUser" class="actions.Deletereporteduser" method="callDeletereportUser">
+            <result name="success">AdminWelcomePage.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+      
+  
+       
+       <action name="ViewUser" class="actions.UserAction" method="callGetUser">
+            <result name="success">ViewUser.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+        <action name="DeleteUser" class="actions.UserAction" method="callDeleteUser">
+            <result name="success">Deleted.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+      <action name="ViewUserProfile" class="actions.UserAction" method="callProfile">
+            <result name="success">ViewUserProfile.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+          
+        <action name="SavePost" class="actions.SavePost" method="callsavePost">
+            <result name="success">UserHome.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+          
+
+        <action name="ViewUserpost" class="actions.ViewUserAction" method="callUserPost">
+            <result name="success">MyPost_1.jsp</result>
+            <result name="failure">Error.jsp</result>
+     </action>
+     
+     <action name="DeletePost" class="actions.DeletePostAction" method="callDeletePost">
+            <result name="success">MyPost.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+       
+        
+   <action name="ViewContent1" class="actions.ViewContentAction1" method="callContentView">
+            <result name="success">UserHome.jsp</result>
+             </action>
+             
+             <action name="AddComment" class="actions.AddComment" method="callAddComment" >
+            <result name="success">AddComment.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+             
+              <action name="SaveComment" class="actions.SaveComment" method="callSaveComment">
+            <result name="success">UserHome.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+             
+              <action name="UpdatePost" class="actions.UpdatePost" method="callUpdatePost">
+            <result name="success">UpdatePost.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+        
+        <action name="SaveUpdatePost" class="actions.SaveUpdatePost" method="callSaveUpdatePost">
+            <result name="success">UserHome.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+             
+          <action name = "checkUser" class = "actions.CheckUser" method = "callCheckUser">         
+       <result name = "success">UserHome.jsp</result>
+       <result name = "failure">Error.jsp</result>
+      </action>   
+      
+       <action name="ReportAbuse" class="actions.AddComment" method="callAddComment" >
+            <result name="success">ReportAbuse.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+             
+              <action name="saveReport" class="actions.ReportAbuse" method="callReportAbuse" >
+            <result name="success">UserHome.jsp</result>
+            <result name="failure">Error.jsp</result>
+        </action>
+             
+      <action name="UserRegistrations" class="actions.RegisterUser" method="callSaveUser" >
+            <result name="success">newlogin.jsp</result>
+            <result name="error">Error.jsp</result>
+       </action>
+             
+        <action name="loginUser" class="actions.LoginUser"  method="callLoginUser" >
+            <result name="success">UserHome.jsp</result>
+            <result name="error">Error.jsp</result>
+            
+         </action>  
+         
+            <action name="userProfile" class="actions.UserProfile"  method="callUserProfile" >
+            <result name="success">UserProfile.jsp</result>
+            <result name="error">Error.jsp</result>
+            
+        </action>
+        
+        <action name="userUpdate" class="actions.UpdateUser"  method="callUpdateUser" >
+            <result name="success">UserHome.jsp</result>
+            <result name="error">Error.jsp</result>
+            
+         </action>
+         <action name="ViewCategorywise1" class="actions.CategorywiseAction" method="callCategorywiseContent">
+            <result name="success">viewpost.jsp</result>
+            <result name="failure">Error.jsp</result>
+         </action>
+                
+            
+    </package>
+
+</struts> 
